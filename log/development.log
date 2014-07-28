@@ -4362,3 +4362,9 @@ Started GET "/appl/index" for 72.105.239.118 at 2014-07-28 23:09:27 +0000
 Processing by ApplController#index as HTML
   Rendered appl/index.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 76ms (Views: 73.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/appl/index" for 72.105.239.118 at 2014-07-28 23:18:09 +0000
+Processing by ApplController#index as HTML
+  Rendered appl/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
