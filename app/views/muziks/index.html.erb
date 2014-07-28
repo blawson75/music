@@ -1,0 +1,33 @@
+<h1>Listing muziks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Format</th>
+      <th>Length min</th>
+      <th>Length sec</th>
+      <th>Size</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @muziks.each do |muzik| %>
+      <tr>
+        <td><%= muzik.name %></td>
+        <td><%= muzik.format %></td>
+        <td><%= muzik.length_min %></td>
+        <td><%= muzik.length_sec %></td>
+        <td><%= muzik.size %></td>
+        <td><%= link_to 'Show', muzik %></td>
+        <td><%= link_to 'Edit', edit_muzik_path(muzik) %></td>
+        <td><%= link_to 'Destroy', muzik, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Muzik', new_muzik_path %>

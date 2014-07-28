@@ -1,0 +1,37 @@
+<%= form_for(@muzik) do |f| %>
+  <% if @muzik.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@muzik.errors.count, "error") %> prohibited this muzik from being saved:</h2>
+
+      <ul>
+      <% @muzik.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :format %><br>
+    <%= f.text_field :format %>
+  </div>
+  <div class="field">
+    <%= f.label :length_min %><br>
+    <%= f.number_field :length_min %>
+  </div>
+  <div class="field">
+    <%= f.label :length_sec %><br>
+    <%= f.number_field :length_sec %>
+  </div>
+  <div class="field">
+    <%= f.label :size %><br>
+    <%= f.number_field :size %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
