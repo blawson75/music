@@ -1,4 +1,18 @@
+<div class="navbar navbar-fluid-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Brian's Sound Manager</a>
+          <span class="page"> <%= $page %> </span>
+        </div>
+      </div>
+    </div>
 <%= form_for(@muzik) do |f| %>
+<div class="content">
   <% if @muzik.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@muzik.errors.count, "error") %> prohibited this muzik from being saved:</h2>
@@ -17,7 +31,8 @@
   </div>
   <div class="field">
     <%= f.label :format %><br>
-    <%= f.text_field :format %>
+    <%= select_tag "muzik_format", 
+options_for_select(["CD", "Cassette", "MP3", "8-Track"]) %>
   </div>
   <div class="field">
     <%= f.label :length_min %><br>
@@ -29,9 +44,17 @@
   </div>
   <div class="field">
     <%= f.label :size %><br>
-    <%= f.number_field :size %>
+    <%= f.number_field :size %>&nbsp;&nbsp;
+    <select id="size" style="width:100px;">
+       <option value="0">Select</option>
+      <option value="B">Bytes</option>
+      <option value="KB">KB</option>
+      <option value="MB">MB</option>
+      <option value="GB">GB</option>
+    </select>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+</div
 <% end %>
